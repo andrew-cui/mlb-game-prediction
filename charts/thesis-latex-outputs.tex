@@ -1,0 +1,60 @@
+$$Y_i^t \sim N(\overline{Y}^{t-1}, 0)$$
+
+$$FIP = \frac{13\cdot HR + 3\cdot (BB + HBP) - 2 \cdot K}{IP} \text{ }+ \text{ }C_{FIP} \text{   such that   } \overline{FIP}^t = \overline{ERA}^t \text{   across the league }$$
+
+$$BSS = \frac{BS_{baseline} - BS_{model}}{BS_{baseline}} = 1 - \frac{BS_{model}}{BS_{baseline}} = 1 - \frac{0.2278}{0.4684} = 0.5137 > 0$$
+
+$$P\% = \frac{RS^2}{RS^2+RA^2}$$
+
+$$R_A^{t+1} = R_A^t + K(I(\text{A wins})-E_A)$$
+
+$$R_A^t$$
+$$R_A^{t+1}$$
+$$K$$
+$$I(\text{A wins})$$
+$$E_A$$
+
+$$E_A = \frac{1}{1+100^{-(R_A-R_B)/400}}$$
+
+\begin{align*}
+  P(Y_i = 1 \mid X_i) &= \frac{\exp(\bm{X_i}\cdot \bm{\beta})}{1 + \exp(\bm{X_i}\cdot \bm{\beta})}  \tag{logistic curve}\\
+  \log \Big[\frac{P(Y=1)}{P(Y=0)}\Big] &= \bm{X}\cdot \bm{\beta} \tag{log-odds}
+\end{align*}
+
+\begin{align*}
+\hat{\bm{\beta}} &= \argmin_{\bm{\beta}} \Big[ \sum_{i=1}^n (Y_i-\bm{X_i} \bm{\beta})^2
++ \lambda_1 \sum_{j=1}^k |\beta_j|
++ \lambda_2 \sum_{j=1}^k \beta_j^2
+\Big] \\
+&= \argmin_{\bm{\beta}} (RSS + L1(\lambda_1, \bm{\beta})+ L2(\lambda_2, \bm{\beta}))
+\end{align*}
+
+$$P(Y=1)= \frac{1}{K}\sum_{i=1}^n I(y_i=1)$$
+
+
+$$\text{CV Error} = \frac{1}{k}\sum_{i=1}^k \sum_{j=1}^n I(y_j \neq \hat{y}_j \mid \text{ fold } i)$$
+
+\begin{align*}
+  \text{Gini } G &= \hat{p}_{m, 1} (1-\hat{p}_{m, 1}) + \hat{p}_{m, 0}(1-\hat{p}_{m, 0}) \tag{only two classes}\\
+  \text{Entropy } D &= -\big[\hat{p}_{m, 1}\log(\hat{p}_{m, 1}) + \hat{p}_{m, 0}\log(\hat{p}_{m, 0})\big]
+\end{align*}
+
+
+$$
+\text{outcome }y_i = \begin{cases}
+  \text{ }1 & \text{if home team wins } \\
+  \text{ }0 & \text{if away team wins } 
+\end{cases}
+$$
+
+$$\text{Accuracy} = \frac{\sum_{i=1}^n I(y_i = \hat{y}_i)}{n} \times 100\%$$
+
+$$\text{Brier} = \begin{cases}
+  \text{ }\frac{1}{n} \sum_{i=1}^n \big[P(y_i = 1) - 1\big]^2 & \text{if home team wins } \\
+  \text{ }\frac{1}{n} \sum_{i=1}^n \big[P(y_i = 0)\big]^2 & \text{if away team wins } 
+\end{cases}
+$$
+
+$$9\cdot K/IP,\text{} 9\cdot HR/IP$$
+
+$$\frac{H+BB}{AB+BB+HBP+SF}$$
